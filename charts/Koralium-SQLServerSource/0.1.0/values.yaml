@@ -1,0 +1,9 @@
+database:
+  # datasource: ""
+  # name: ""
+  # username: ""
+  # password: ""
+  # table: ""
+
+general:
+  name: "Koralium Sql Server Source"

@@ -1,0 +1,9 @@
+name: Koralium-SQLServerSource
+version: 0.1.0
+appVersion: 0.1.0
+description: Reads SQL Server data into Koralium.
+keywords:
+- koralium
+- sqlserver
+home:
+sources:

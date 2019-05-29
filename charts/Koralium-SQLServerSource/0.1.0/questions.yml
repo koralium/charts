@@ -1,0 +1,39 @@
+questions:
+  - variable: general.name
+    default: "Koralium-SqlServerSource"
+    description: "Name of the deployment"
+    type: string
+    label: Name
+    group: General
+  - variable: database.datasource
+    default: ""
+    description: "The sql database server to connect to."
+    type: string
+    label: SQL Database Server
+    group: Database
+  - variable: database.name
+    default: ""
+    description: "The database on the server that the table is in."
+    type: string
+    label: Database name
+    group: Database
+  - variable: database.username
+    default: ""
+    description: "The username of the user that will connect to the SQL Server"
+    type: string
+    label: "Database username"
+    group: Database
+  - variable: database.password
+    default: ""
+    description: "The password of the user that will connect to SQL Server"
+    type: string
+    Label: "Database user password"
+    group: Database
+  - variable: database.table
+    default: ""
+    description: "The name of the table to read data from"
+    type: string
+    label: "Table name"
+    group: Database
+
+    

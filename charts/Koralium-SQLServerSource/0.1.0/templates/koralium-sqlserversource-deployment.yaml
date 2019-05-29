@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.general.name }}
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    spec:
+      containers:
+      - image: koralium/sqlserversource
+        name: {{ .Values.general.name }}
+        resources: {}
+        env:
+        - name: DB_DATA_SOURCE
+          value: {{ .Values.database.datasource }}
+        - name: DB_DATABASE
+          value: {{ .Values.database.name }}
+        - name: DB_USERNAME
+          value: {{ .Values.database.username }}
+        - name: DB_PASSWORD
+          value: {{ .Values.database.password }}
+        - name: DB_TABLE
+          value: {{ .Values.database.table }}
