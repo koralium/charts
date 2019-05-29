@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - image: koralium/sqlserversource
-        name: {{ .Values.general.name }}
+        name: {{ .Release.Name }}
         resources: {}
         env:
         - name: DB_DATA_SOURCE
