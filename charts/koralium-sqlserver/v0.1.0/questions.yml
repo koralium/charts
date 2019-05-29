@@ -1,12 +1,6 @@
 categories:
 - Koralium
 questions:
-  - variable: general.name
-    default: "Koralium-SqlServerSource"
-    description: "Name of the deployment"
-    type: string
-    label: Name
-    group: General
   - variable: database.datasource
     default: ""
     description: "The sql database server to connect to."
