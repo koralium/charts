@@ -1,3 +1,5 @@
+categories:
+- Koralium
 questions:
   - variable: general.name
     default: "Koralium-SqlServerSource"
