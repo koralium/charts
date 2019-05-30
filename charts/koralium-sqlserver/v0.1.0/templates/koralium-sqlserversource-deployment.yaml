@@ -39,7 +39,7 @@ spec:
         - name: BUCKET_NAME
           value: {{ .Values.koralium.bucket }}
         - name: KEY_SEPERATOR
-          value: {{ .Values.koralium.key.seperator }}
+          value: "{{ .Values.koralium.key.seperator }}"
       {{- if not (eq "" .Values.koralium.key.builder) }}
         - name: KEY_BUILDER
           value: {{ .Values.koralium.key.builder }}
