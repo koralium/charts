@@ -17,7 +17,7 @@ spec:
         app: {{ template "koraliumsqlserver.name" . }}
     spec:
       containers:
-      - image: koralium/sqlserversource
+      - image: {{ .Values.image.repository }}
         name: {{ .Release.Name }}
         resources: {}
         env:
@@ -34,3 +34,9 @@ spec:
               key: sqlserver-password
         - name: DB_TABLE
           value: {{ .Values.database.table }}
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end}}
+      {{- end}}
