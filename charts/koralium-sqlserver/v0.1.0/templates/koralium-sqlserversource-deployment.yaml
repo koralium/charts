@@ -38,7 +38,7 @@ spec:
           value: {{ .Values.koralium.api }}
         - name: BUCKET_NAME
           value: {{ .Values.koralium.bucket }}
-        - name: KEY_SEPERATOR
+        - name: TESTVALUE
           value: {{ .Values.koralium.key.seperator }}
       {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
