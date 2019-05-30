@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ template "koralium.fullname" . }}
   labels:
     app: {{ template "koralium.name" . }}
     chart: {{ template "koralium.chart" . }}
@@ -25,4 +25,3 @@ spec:
       containers:
       - image: {{ .Values.api.image.repository }}
         name: {{ .Release.Name }}
-        

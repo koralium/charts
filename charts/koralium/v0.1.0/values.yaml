@@ -5,4 +5,7 @@ api:
     - koralium
   service:
     type: ClusterIP
+  ingress:
+    enabled: true
+    host: xip.io
 

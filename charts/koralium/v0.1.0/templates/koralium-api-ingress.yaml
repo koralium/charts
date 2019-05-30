@@ -1,0 +1,21 @@
+{{- if .Values.api.ingress.enabled -}}
+{{- $serviceName := include "kafka-topics-ui.fullname" . -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "koralium.fullname" . }}
+  labels:
+    app: {{ template "koralium.name" . }}
+    chart: {{ template "koralium.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  rules:
+  - host: {{ .Values.api.ingress.host }}
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: {{ $serviceName }}
+          servicePort: 80
+{{- end -}}
