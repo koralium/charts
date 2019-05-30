@@ -22,27 +22,27 @@ spec:
         resources: {}
         env:
         - name: DB_DATA_SOURCE
-          value: {{ .Values.database.datasource }}
+          value: "{{ .Values.database.datasource }}"
         - name: DB_DATABASE
-          value: {{ .Values.database.name }}
+          value: "{{ .Values.database.name }}"
         - name: DB_USERNAME
-          value: {{ .Values.database.username }}
+          value: "{{ .Values.database.username }}"
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ template "koraliumsqlserver.name" . }}
               key: sqlserver-password
         - name: DB_TABLE
-          value: {{ .Values.database.table }}
+          value: "{{ .Values.database.table }}"
         - name: KORALIUM_API_URL
-          value: {{ .Values.koralium.api }}
+          value: "{{ .Values.koralium.api }}"
         - name: BUCKET_NAME
-          value: {{ .Values.koralium.bucket }}
+          value: "{{ .Values.koralium.bucket }}"
         - name: KEY_SEPERATOR
           value: "{{ .Values.koralium.key.seperator }}"
       {{- if not (eq "" .Values.koralium.key.builder) }}
         - name: KEY_BUILDER
-          value: {{ .Values.koralium.key.builder }}
+          value: "{{ .Values.koralium.key.builder }}"
         {{- end }}
       {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
