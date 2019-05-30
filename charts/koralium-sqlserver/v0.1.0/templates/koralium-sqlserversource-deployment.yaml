@@ -28,6 +28,9 @@ spec:
         - name: DB_USERNAME
           value: {{ .Values.database.username }}
         - name: DB_PASSWORD
-          value: {{ .Values.database.password }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "koraliumsqlserver.name" . }}
+              key: sqlserver-password
         - name: DB_TABLE
           value: {{ .Values.database.table }}
