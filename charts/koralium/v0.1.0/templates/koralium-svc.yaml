@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ template "koralium.name" . }}
+    chart: {{ template "koralium.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.api.service.type }}
+  ports:
+  - name: koralium
+    port: 80
+    targetPort: koralium
+  selector:
+    app: {{ template "koralium.name" . }}
+    release: "{{ .Release.Name }}"

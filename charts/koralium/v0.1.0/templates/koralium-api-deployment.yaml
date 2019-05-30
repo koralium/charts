@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ template "koralium.name" . }}
+    chart: {{ template "koralium.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Name }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        release: "{{ .Release.Name }}"
+        role: api
+        app: {{ template "koralium.name" . }}
+    spec:
+      {{- if .Values.api.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.api.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end}}
+      {{- end}}
+      containers:
+      - image: {{ .Values.api.image.repository }}
+        name: {{ .Release.Name }}
+        

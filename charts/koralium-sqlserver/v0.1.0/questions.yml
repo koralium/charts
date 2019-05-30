@@ -24,7 +24,7 @@ questions:
     default: ""
     description: "The password of the user that will connect to SQL Server"
     type: password
-    Label: "Database user password"
+    label: "Database user password"
     group: Database
   - variable: database.table
     default: ""

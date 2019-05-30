@@ -1,0 +1,8 @@
+api:
+  image:
+    repository: koralium/koralium-api
+    pullSecrets:
+    - koralium
+  service:
+    type: ClusterIP
+
