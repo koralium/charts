@@ -12,7 +12,8 @@ spec:
   ports:
   - name: koralium
     port: 80
-    targetPort: koralium
+    targetPort: 80
+    protocol: TCP
   selector:
     app: {{ template "koralium.name" . }}
     release: "{{ .Release.Name }}"
