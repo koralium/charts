@@ -9,3 +9,12 @@ database:
   username: ""
   password: ""
   table: ""
+  interval: 0
+
+koralium:
+  api: ""
+  bucket: ""
+  key:
+    seperator: ","
+    builder: ""
+    

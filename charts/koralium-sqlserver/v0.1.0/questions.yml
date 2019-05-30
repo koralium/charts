@@ -32,4 +32,28 @@ questions:
     type: string
     label: "Table name"
     group: Database
-    
+  # Koralium variables
+  - variable: koralium.api
+    default: ""
+    description: "URL to the koralium API"
+    type: string
+    label: Koralium API URL
+    group: Koralium
+  - variable: koralium.bucket
+    default: ""
+    type: string
+    label: Bucket name
+    description: "Name of the bucket that the table data should be placed into"
+    group: Koralium
+  - variable: koralium.key.seperator
+    default: ":"
+    description: "The character that should be used to seperate primary keys when the object is entered into the bucket"
+    type: string
+    label: "Key separator"
+    group: Koralium
+  - variable: koralium.key.builder
+    default: ""
+    label: "Key builder"
+    description: "Optional key builder that defines how the key should look, example: 'prefix_{primaryKeyName}_suffix'"
+    type: string
+    group: Koralium
