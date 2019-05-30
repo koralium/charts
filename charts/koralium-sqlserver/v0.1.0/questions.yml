@@ -1,6 +1,7 @@
 categories:
 - Koralium
 questions:
+  # Database questions
   - variable: database.datasource
     default: ""
     description: "The sql database server to connect to."
@@ -31,5 +32,4 @@ questions:
     type: string
     label: "Table name"
     group: Database
-
     
