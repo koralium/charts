@@ -45,13 +45,13 @@ questions:
     label: Bucket name
     description: "Name of the bucket that the table data should be placed into"
     group: Koralium
-  - variable: koralium.keyseperator
+  - variable: koralium.key.seperator
     default: ":"
     description: "The character that should be used to seperate primary keys when the object is entered into the bucket"
     type: string
     label: "Key separator"
     group: Koralium
-  - variable: koralium.keybuilder
+  - variable: koralium.key.builder
     default: ""
     label: "Key builder"
     description: "Optional key builder that defines how the key should look, example: 'prefix_{primaryKeyName}_suffix'"

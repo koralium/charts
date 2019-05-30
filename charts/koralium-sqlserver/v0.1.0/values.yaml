@@ -14,6 +14,7 @@ database:
 koralium:
   api: ""
   bucket: ""
-  keyseperator: ","
-  keybuilder: ""
-
+  key:
+    seperator: ""
+    builder: ""
+    
