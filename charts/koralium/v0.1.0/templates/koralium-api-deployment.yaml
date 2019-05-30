@@ -25,3 +25,5 @@ spec:
       containers:
       - image: {{ .Values.api.image.repository }}
         name: {{ .Release.Name }}
+        ports:
+        - containerPort: 80
