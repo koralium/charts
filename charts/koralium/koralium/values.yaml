@@ -12,6 +12,7 @@ api:
 
 #WORKER
 worker:
+  enabled: true
   image:
     repository: koralium/koralium-worker
     pullSecrets:

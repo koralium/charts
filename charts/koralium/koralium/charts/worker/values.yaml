@@ -1,0 +1,5 @@
+image:
+  repository: koralium/koralium-worker
+  pullSecrets:
+  - koralium
+replicas: 1

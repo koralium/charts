@@ -5,3 +5,6 @@ dependencies:
   - name: api
     version: 0.1.0
     condition: api.enabled
+  - name: worker
+    version: 0.1.0
+    condition: worker.enabled

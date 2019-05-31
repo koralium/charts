@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "worker.fullname" . }}-worker
+  labels:
+    app: {{ template "worker.name" . }}
+    chart: {{ template "worker.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Name }}"
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        release: "{{ .Release.Name }}"
+        role: worker
+        app: {{ template "worker.name" . }}
+    spec:
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end}}
+      {{- end}}
+      containers:
+      - image: {{ .Values.image.repository }}
+        name: {{ .Release.Name }}
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: {{ .Release.Name }}
