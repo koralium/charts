@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "koralium.fullname" . }}
+  name: {{ template "koralium.fullname" . }}-worker
   labels:
     app: {{ template "koralium.name" . }}
     chart: {{ template "koralium.chart" . }}
