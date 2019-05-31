@@ -1,0 +1,21 @@
+{{- if .Values.dashboard.ingress.enabled -}}
+{{- $serviceName := include "dashboard.fullname" . -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "dashboard.fullname" . }}
+  labels:
+    app: {{ template "dashboard.name" . }}
+    chart: {{ template "dashboard.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  rules:
+  - host: {{ .Values.dashboard.ingress.host }}
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: {{ $serviceName }}
+          servicePort: 80
+{{- end -}}

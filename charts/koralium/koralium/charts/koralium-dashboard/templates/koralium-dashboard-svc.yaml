@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "dashboard.fullname" . }}
+  labels:
+    app: {{ template "dashboard.name" . }}
+    chart: {{ template "dashboard.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.dashboard.service.type }}
+  ports:
+  - name: koralium-dashboard
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: {{ template "dashboard.name" . }}
+    release: "{{ .Release.Name }}"

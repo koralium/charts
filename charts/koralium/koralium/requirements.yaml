@@ -1,0 +1,4 @@
+dependencies:
+  - name: koralium-dashboard
+    version: 0.1.0
+    condition: dashboard.enabled

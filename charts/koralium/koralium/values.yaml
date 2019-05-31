@@ -9,12 +9,26 @@ api:
     enabled: true
     host: xip.io
 
+#WORKER
 worker:
   image:
     repository: koralium/koralium-worker
     pullSecrets:
     - koralium
   replicas: 1
+
+#DASHBOARD
+dashboard:
+  enabled: true
+  image:
+    repository: koralium/dashboard
+    pullSecrets:
+    - koralium
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    host: xip.io
 
 # Redis values
 redis:
