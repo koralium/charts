@@ -2,3 +2,6 @@ dependencies:
   - name: dashboard
     version: 0.1.0
     condition: dashboard.enabled
+  - name: api
+    version: 0.1.0
+    condition: api.enabled

@@ -16,6 +16,6 @@ spec:
       paths:
       - path:
         backend:
-          serviceName: {{ $serviceName }}
+          serviceName: {{ $serviceName }}-api
           servicePort: 80
 {{- end -}}

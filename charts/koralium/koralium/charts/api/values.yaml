@@ -1,0 +1,10 @@
+image:
+  repository: koralium/koralium-api
+  pullSecrets:
+  - koralium
+service:
+  type: ClusterIP
+ingress:
+  enabled: true
+  host: xip.io
+replicas: 1

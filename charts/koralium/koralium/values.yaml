@@ -1,4 +1,5 @@
 api:
+  enabled: true
   image:
     repository: koralium/koralium-api
     pullSecrets:
