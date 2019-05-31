@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "koralium.fullname" . }}
+  labels:
+    app: {{ template "koralium.name" . }}
+    chart: {{ template "koralium.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Name }}"
+spec:
+  replicas: {{ .Values.worker.replicas }}
+  template:
+    metadata:
+      labels:
+        release: "{{ .Release.Name }}"
+        role: worker
+        app: {{ template "koralium.name" . }}
+    spec:
+      {{- if .Values.worker.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.worker.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end}}
+      {{- end}}
+      containers:
+      - image: {{ .Values.worker.image.repository }}
+        name: {{ .Release.Name }}
+        ports:
+        - containerPort: 80
+        env:
+        - name: REDIS_URL
+          value: "{{ .Values.redis.url }}"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "{{ .Values.kafka.boostrapservers }}"

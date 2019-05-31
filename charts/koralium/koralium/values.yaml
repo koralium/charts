@@ -9,6 +9,13 @@ api:
     enabled: true
     host: xip.io
 
+worker:
+  image:
+    repository: koralium/koralium-worker
+    pullSecrets:
+    - koralium
+  replicas: 1
+
 # Redis values
 redis:
   url: ""
