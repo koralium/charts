@@ -9,3 +9,9 @@ api:
     enabled: true
     host: xip.io
 
+# Redis values
+redis:
+  url: ""
+
+kafka:
+  boostrapservers: ""
