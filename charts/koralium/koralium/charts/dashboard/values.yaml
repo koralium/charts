@@ -1,0 +1,10 @@
+enabled: true
+image:
+  repository: koralium/dashboard
+  pullSecrets:
+  - koralium
+service:
+  type: ClusterIP
+ingress:
+  enabled: true
+  host: xip.io

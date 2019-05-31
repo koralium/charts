@@ -8,9 +8,9 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  type: {{ .Values.dashboard.service.type }}
+  type: {{ .Values.service.type }}
   ports:
-  - name: koralium-dashboard
+  - name: dashboard
     port: 80
     targetPort: 80
     protocol: TCP

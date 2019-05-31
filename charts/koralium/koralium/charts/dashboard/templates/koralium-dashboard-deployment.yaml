@@ -16,14 +16,14 @@ spec:
         role: dashboard
         app: {{ template "dashboard.name" . }}
     spec:
-      {{- if .Values.dashboard.image.pullSecrets }}
+      {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
-        {{- range .Values.dashboard.image.pullSecrets }}
+        {{- range .Values.image.pullSecrets }}
         - name: {{ . }}
         {{- end}}
       {{- end}}
       containers:
-      - image: {{ .Values.dashboard.image.repository }}
+      - image: {{ .Values.image.repository }}
         name: {{ .Release.Name }}
         ports:
         - containerPort: 80
