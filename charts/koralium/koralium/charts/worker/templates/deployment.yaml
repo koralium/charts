@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "worker.fullname" . }}-worker
+  name: {{ template "worker.fullname" . }}
   labels:
     app: {{ template "worker.name" . }}
     chart: {{ template "worker.chart" . }}

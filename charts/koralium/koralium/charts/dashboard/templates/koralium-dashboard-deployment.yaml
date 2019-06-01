@@ -27,3 +27,9 @@ spec:
         name: {{ .Release.Name }}
         ports:
         - containerPort: 80
+        env:
+        - name: API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}
+              key: API_URL
