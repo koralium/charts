@@ -2,13 +2,13 @@ apiVersion: v1
 entries:
   koralium:
   - appVersion: 0.1.0
-    created: "2019-06-01T01:56:40.2598637+02:00"
+    created: "2019-06-01T02:13:50.7470174+02:00"
     description: Koralium
-    digest: 3630a5343278c47a236b5a48cb3e52533b8cd607d364f0ad415c63354346edc5
+    digest: 081de5b741bc2d0982e6ff255f8801721f260715607b96279397f9f5c3d71058
     keywords:
     - koralium
     name: koralium
     urls:
     - koralium-0.1.0.tgz
     version: 0.1.0
-generated: "2019-06-01T01:56:40.256362+02:00"
+generated: "2019-06-01T02:13:50.7445156+02:00"
