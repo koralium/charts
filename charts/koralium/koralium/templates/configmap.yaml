@@ -11,6 +11,6 @@ data:
   REDIS_URL: {{ .Values.redis.url }}
   KAFKA_BOOTSTRAP_SERVERS: {{ .Values.kafka.boostrapservers }}
   {{- if .Values.dashboard.apiUrlOverride -}}
-  API_URL: {{ .Values.dashboard.apiUrlOverride }}
+  API_URL: "{{ .Values.dashboard.apiUrlOverride }}"
   {{- end -}}
 
